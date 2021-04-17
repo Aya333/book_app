@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/styles.css">
+    <%- include('../layout/head')  %> 
+  
     <title>Document</title>
 </head>
-<header> 
-    <header> 
-        <h1>Best Books</h1>
-        <div><p>Search for Books</p></div>
-    </header>
 <body>
+
+    <header> 
+        <%- include('../layout/header')  %> 
+        <div><p><%=booksArr.length %> Saved Books</p></div>
+    </header>
+
+    <main class="books"> 
+        <% booksArr.forEach((book) => { %>
+        <div class="divbooks">
+        <img src= <%=book.image_url %> alt="">
+         <p class="btitle"> <%= book.title %></p>
+         <p class= 'bauthor'> <%= book.author %> </p>
+         <a href="/books/<%=book.id %>">View Details</a>
+        
+        </div>
+    <% }) %>
+
+    </main>
     
-    <p class="btitle1" >Hello !!! </p>
-<a href ='/searches/new'  >Start</a>
-</body>
+ 
+
 <footer></footer>
+</body>
 </html>
