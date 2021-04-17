@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book App</title>
-    <link rel="stylesheet" href="./public/styles/safe.css">
+    <%-include('../layout/head')%>
+    <title>Home Page</title>
+    <link rel="stylesheet" href="./public/style/reset.css">
+    <link rel="stylesheet" href="./public/style/base.css">
+    <link rel="stylesheet" href="./public/style/layout.css">
+    <link rel="stylesheet" href="./public/style/modules.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
-    <header>
-        <h1>
-            Hello World!
-        </h1>
-    </header>
-<main>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae harum ut eveniet voluptatem ducimus, magni cum debitis unde delectus aliquam minima quibusdam cupiditate voluptatibus maiores consectetur, quos est accusantium similique.
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci quibusdam nemo necessitatibus libero ducimus officiis sunt. Tenetur nisi laudantium adipisci corporis doloremque fuga ratione excepturi! Quasi laboriosam fugiat dolore ipsa?
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, ducimus totam minus cumque error mollitia nemo qui praesentium, quibusdam iure vero? In ipsam omnis enim. Iusto quibusdam nesciunt voluptate nisi.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi officiis, repellendus consequuntur, veniam quas ipsam cum pariatur magni dolores soluta laborum culpa quod, dolorem nulla velit? Quis, tempore. Minima, veniam!
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam fuga aspernatur corrupti obcaecati reprehenderit quasi sed eos voluptatibus, unde enim odit veniam tenetur assumenda! Cum distinctio laborum et magni asperiores.
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, deleniti quibusdam consequatur illum doloremque nesciunt numquam? Eius beatae id nemo quia officiis doloremque enim? Voluptatem iure rerum ipsa culpa voluptate.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio ipsum impedit fuga corporis atque temporibus, laudantium officiis reiciendis minus accusamus facilis molestiae quos debitis enim autem sapiente. Illum, distinctio minima.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia esse dolorum veritatis iusto recusandae consectetur similique veniam, corporis doloremque error eum, beatae quidem. Voluptatibus cum, temporibus placeat architecto esse tempora.
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque quaerat, magnam sint animi aliquam rem? Sunt veritatis accusamus odio sequi hic repellendus, in quasi doloremque ipsum eveniet molestias quibusdam reprehenderit!
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et cumque magnam ipsum doloremque expedita, neque, maxime dolor quisquam, odio corporis iure consectetur nesciunt doloribus voluptate blanditiis asperiores? Nihil, eveniet asperiores?
+    <%-include('../layout/header')%>
+    <h2 class="h2">Saved Books</h2>
+    <main>
+        <p> <%= result.length %> Books In The Collection</p>
+        <section>
+            <% result.forEach (results=>{ %> 
+                <img src="<%= results.img %>" alt="">
+                <h2><%= results.title %> </h2>
+                <h3><%= results.author %> </h3>
+                <p><%= results.isbn%> </p>
+         <form action=<%=`/books/${results.id}`%> method="GET">
       
-  </p>
-</main>
-    <footer>
-        2021&copy;
-    </footer>
+        <button type="submit">View Details</button>
+        </form>
+        <% }) %> 
+        </section>
+    </main>
+    <%-include('../layout/footer')%>
+    <script src="./public/style/menu.js"></script>
 </body>
 </html>
