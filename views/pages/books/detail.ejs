@@ -1,11 +1,14 @@
 <div class="divbooks">
-    <img src= <%=book.image_url %> alt="">
-     <p class="btitle"> <%= book.title %></p>
-     <p class= 'bauthor'> <%= book.author %> </p>
-      <p class = 'description' > <%= book.description%></p> 
-      <p><%= book.isbn %></p>  
+  <img src="<%" ="book.image_url" % /> alt="">
+  <p class="btitle"><%= book.title %></p>
+  <p class="bauthor"><%= book.author %></p>
+  <p class="description"><%= book.description%></p>
+  <p><%= book.isbn %></p>
 
-      <p>Bookshelf: <%= book.categories %></p>  
+  <p>Bookshelf: <%= book.categories %></p>
 
-    </div>
-
+  <form action="/books/<%= book.id %>?_method=delete" method="POST">
+    <button id="deleteBtn">Delete</button>
+  </form>
+  <button id="updateBtn">Update Details</button>
+</div>
