@@ -4,27 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book App</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+
+    <title>Document</title>
 </head>
 <body>
-    <header>
+    <header> 
+        <header> 
+            <h1>Best Books</h1>
+            <div><p>Search Result</p></div>
+        </header>
 
     </header>
+    <main class="books"> 
+        <% booksArr.forEach((book) => { %>
+        <div class="divbooks">
+        <img src= <%=book.img %> alt="">
+         <p class="btitle"> <%= book.title %></p>
+         <p class= 'bauthor'> <%= book.authors %> </p>
+         <p> <%= book.description %> </p>
+        
+        </div>
+    <% }) %>
 
-    <main>
-        <% search.forEach(val => { %>
-            <section> 
-                <img src="<%= val.img %> " alt="">
-                <h2><%= val.title %> </h2>
-                <h3><%= val.author %> </h3>
-                <p><%= val.description%></p>   
-            </section>
-        <%  }); %>
     </main>
-
     <footer>
 
     </footer>
-
+    
 </body>
 </html>
