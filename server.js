@@ -11,9 +11,9 @@ const path = require( 'path' );
 
 
 const PORT = process.env.PORT || 3030;
-const client = new pg.Client( { connectionString: process.env.DATABASE_URL ,
-  ssl: { rejectUnauthorized: false }} 
-  );
+const client = new pg.Client( { connectionString: process.env.DATABASE_URL });
+  // ssl: { rejectUnauthorized: false }}
+
 server.set( 'views', path.join( __dirname, '/views/pages' ) );
 server.set( 'view engine','ejs' );
 server.use( express.static( './public/' ) );
@@ -129,4 +129,3 @@ client.connect()
   .then( () => {
     server.listen( PORT, () => console.log( `Listening on port: ${PORT}` ) );
   } );
-  
