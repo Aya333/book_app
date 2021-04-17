@@ -16,3 +16,6 @@ VALUES('Diane Flowers','Preserving Flowers','ISBN_13 9781402753886','Crafts & Ho
 
 INSERT INTO books (author ,title,isbn,categories,image_url,description) 
 VALUES('Flowers','100 Flowers','ISBN_13 9798640765274','History','http://books.google.com/books/content?id=YG2CzQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api','This is a pre-1923 historical reproduction that was curated for quality. Quality assurance was conducted on each of these books in an attempt to remove books with imperfections introduced by the digitization process. Though we have made best efforts - the books may have occasional errors that do not impede the reading experience. We believe this work is culturally important and have elected to bring the book back into print as part of our continuing commitment to the preservation of printed works worldwide.');
+
+
+© 2021 GitHub, Inc.

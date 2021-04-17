@@ -1,10 +1,11 @@
+<div class="divbooks">
+    <img src= <%=book.image_url %> alt="">
+     <p class="btitle"> <%= book.title %></p>
+     <p class= 'bauthor'> <%= book.author %> </p>
+      <p class = 'description' > <%= book.description%></p> 
+      <p><%= book.isbn %></p>  
 
-<section>
-    <h1>hi</h1>
-    <img src="<%=item.img %> " alt="">
-    <h2><%= item.title %> </h2>
-    <h3><%= item.author %></h3>
-    <p><%= item.description %></p>
-    <p><%= item.isbn %></p>
-    <p><%= item.bookshelf %></p>
-</section>
+      <p>Bookshelf: <%= book.categories %></p>  
+
+    </div>
+

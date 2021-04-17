@@ -1,30 +1,32 @@
+  
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <%- include('../../layout/head')%> 
-    <title>New Search</title>
-    <link rel="stylesheet" href="../public/style/reset.css">
-    <link rel="stylesheet" href="../public/style/base.css">
-    <link rel="stylesheet" href="../public/style/layout.css">
-    <link rel="stylesheet" href="../public/style/modules.css">
+    <%- include('../../layout/head')  %> 
 </head>
-
 <body>
-    <%- include('../../layout/header')%>
-
-    <h2 class="h2">Search By Title Or Author</h2>
+    <header> 
+        <%- include('../../layout/header')  %> 
+        <div><p>Search by Title or Author</p></div>
+    </header>
     <main>
-    <form action="/searches" method="POST">
-        <input type="text" name="search" id="search" placeholder="Enter a Book title or an author name" required>
-        <input type="radio" name="title" id="title" value="title" >
-        <label for="title">Search by Title</label><br>
-        <input type="radio" name="author" id="author" value="author" >
-        <label for="author">Search by Author</label><br>
-        <input type="submit" id="submit">
+    <form action="/searches" method="POST"> 
+       <div>
+        <input type="text" name="search" id="search" placeholder="Enter title or author" > 
+       </div>
+       <div  class="options" >
+        <label for="title">Title</label>
+        <input type="radio" name="searchOption" id="title" value="intitle">
+       </div>
+       <div  class="options" >
+        <label for="author">Author</label>
+        <input type="radio" name="searchOption"  id="author" value="inauthor">
+        </div>
+        <div>
+        <button>Search the Google Books API</button>
+        </div>
     </form>
-   </main>
-   <%- include('../../layout/footer')%> 
-    <script src="../public/style/menu.js"></script>
+  </main>  
+  <footer> </footer>
 </body>
 </html>

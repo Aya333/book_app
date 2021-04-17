@@ -11,7 +11,9 @@ const path = require( 'path' );
 
 
 const PORT = process.env.PORT || 3030;
-const client = new pg.Client( { connectionString: process.env.DATABASE_URL , ssl: { rejectUnauthorized: false }} );
+const client = new pg.Client( { connectionString: process.env.DATABASE_URL 
+  // ssl: { rejectUnauthorized: false }} 
+  );
 server.set( 'views', path.join( __dirname, '/views/pages' ) );
 server.set( 'view engine','ejs' );
 server.use( express.static( './public/' ) );
@@ -106,7 +108,7 @@ function Book( result ){
   }else{this.authors = 'N/A'; }
   this.img = ( result.volumeInfo.imageLinks ) ? result.volumeInfo.imageLinks.thumbnail : 'https://i.imgur.com/J5LVHEL.jpg';
   this.description = result.volumeInfo.description || 'N/A' ;
-  this.isbn = ( result.volumeInfo.industryIdentifiers ) ? `${result.volumeInfo.industryIdentifiers[0].type}: ${result.volumeInfo.industryIdentifiers[0].identifier} ` : 'ISBN N/A';
+  this.isbn = ( result.volumeInfo.industryIdentifiers ) ? `${result.volumeInfo.industryIdentifiers[0].type}: ${result.volumeInfo.industryIdentifiers[0].identifier} ` : 'ISBN N\A';
   this.categories = ( result.volumeInfo.categories ) ? result.volumeInfo.categories.join( ' , ' ) : 'N/A' ;
 
 
@@ -127,3 +129,4 @@ client.connect()
   .then( () => {
     server.listen( PORT, () => console.log( `Listening on port: ${PORT}` ) );
   } );
+  
